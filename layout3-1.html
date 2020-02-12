@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout</title>
+    <style>
+        /*실무에선 패딩 마진을 밑에와 같이*/
+        * {padding: 0; margin: 0;}
+        body {background: #f3e5f5;}
+        #wrap {width: 1200px; margin: 0 auto;}
+        /*header는 반음형이어서 움직여야 하니까 100%로 만듬*/
+        header {width: 100%; height: 150px; background: #9575cd; }
+        aside {float: left; width: 30%; height: 700px; background: #7e57c2;}
+        section {float: left;width: 70%; height: 700px; background: #673ab7;}
+        footer {clear: both; width: 100%; height: 150px;  background: #5e35b1 ;}
+        
+        /* 화면 너비 0 ~ 1200px 
+        위와 같이 max-width를 1200으로 설정시 스크롤바가 생길수 있으니 1220으로 약간의 오차를 두어서 설정하면 좋다.
+        밑에도 100&로 설정한다.*/
+        
+        @media (max-width: 1220px){
+            #wrap {width: 95%;}
+            
+        }
+        /* 화면 너비 0 ~ 768px */
+        @media (max-width: 768px){
+            #wrap {width: 100%;}
+            
+        }
+        
+        /* 화면 너비 0 ~ 480px */
+        @media (max-width: 480px){
+            #wrap {width: 100%;}
+            header {height: 300px;}
+            aside { float: none; width: 100%; height: 300px;}
+            section{ float: none; width: 100%; height: 300px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <aside></aside>
+        <section></section>
+        <footer></footer>
+    </div>
+</body>
+</html>
